@@ -1,8 +1,25 @@
-hr.solid{
-    border-top:5px solid;
-    color: red;
-}
-
 img#logo{
     width: 400px;
+}
+
+hr.solid{
+   border: 1px solid;
+}
+
+ul{
+    list-style:none;
+}
+
+img.product-img{
+    width: 300px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+main{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
 }
