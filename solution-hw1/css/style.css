@@ -1,6 +1,41 @@
 body{
     font-family: sans-serif;
 }
+
+main{
+    margin: auto;
+}
+
+h1{
+    font-weight:200;
+    font-size:35px;
+}
+
+h2{
+    font-size: large;
+}
+
+h3{
+    font-weight:200;
+    font-size: 25px;
+    line-height: 6px;
+}
+
+h4{
+    font-weight:200;
+    font-size: 22px;
+}
+
+div{
+    text-align: center;
+}
+
+mark{
+    color: yellow;
+}
+
+/*header*/
+
 img#logo{
     width: 400px;
 }
@@ -9,19 +44,18 @@ hr.solid{
    border: 1px solid;
 }
 
+/*navigation menu*/
+
 nav{
     text-align: center;
-    border: 3px solid green;
 }
 
-div{
-    text-align: center;
-    border: 3px solid green;
-}
 
 ul{
     list-style:none;
 }
+
+/*product gallery page*/
 
 img.product-img{
     width: 400px;
@@ -31,6 +65,14 @@ img.product-img{
     border-width: 3px;
 }
 
+div.product-title-price{
+    margin-left: 32.5%;
+    margin-right: 32.5%;
+    text-align: left
+}
+
+/*product detail page*/
+
 img.product-detail-img{
     width: 600px;
     height: 600px;
@@ -39,10 +81,66 @@ img.product-detail-img{
     border-width: 3px;
 }
 
-main{
-    margin: auto;
-    width: 35%;
-    border: 3px solid green;
+div.product-selection{
+    margin-left: 38%;
+    margin-right: 38%;
+    text-align: left;
+    border-style: solid;
+    border-color: pink;
+    border-width: 3px;
 }
+
+form{
+    font-weight:200;
+    font-size: 22px;
+}
+
+#glazing{
+    width:98%;
+    height:35px;
+    margin-top:10px;
+    margin-bottom: 20px;
+}
+
+#pack-size{
+    width:98%;
+    height:35px;
+    margin-top:10px;
+    margin-bottom: 20px;
+}
+
+label{
+    font-weight:200;
+    font-size: 22px;
+    line-height: 35px;
+}
+
+#price{
+    font-weight:600;
+    margin: 20px;
+}
+
+button{
+    font-weight:600;
+    font-size: 22px;
+    margin: 20px;
+}
+
+/*cart page*/
+
+img.cart-product-img{
+    width: 200px;
+    height:200px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+#total-checkout{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
 
 
