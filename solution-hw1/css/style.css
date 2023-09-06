@@ -7,32 +7,31 @@ main{
 }
 
 h1{
-    font-weight:200;
-    font-size:35px;
+    font-weight:100;
+    font-size:30px;
 }
 
 h2{
-    font-size: large;
+    font-size: 20px;
 }
 
 h3{
-    font-weight:200;
+    font-weight:100;
     font-size: 25px;
     line-height: 6px;
 }
 
+
 h4{
-    font-weight:200;
-    font-size: 22px;
+    font-weight:100;
+    font-size: 20px;
 }
 
 div{
     text-align: center;
+    margin: auto;
 }
 
-mark{
-    color: yellow;
-}
 
 /*header*/
 
@@ -47,13 +46,29 @@ hr.solid{
 /*navigation menu*/
 
 nav{
-    text-align: center;
+    margin-left:42%;
+    margin-right:45%;
 }
-
 
 ul{
     list-style:none;
 }
+
+li{
+    text-align: center;
+    list-style: none;
+}
+
+.menu-title{
+    width:120px;
+    text-align: center;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
 
 /*product gallery page*/
 
@@ -65,10 +80,21 @@ img.product-img{
     border-width: 3px;
 }
 
-div.product-title-price{
-    margin-left: 32.5%;
-    margin-right: 32.5%;
-    text-align: left
+div.item-container{
+    text-align: left;
+    margin-left: 32.75%;
+    margin-right: 32.75%;
+    border-style:solid;
+    border-color: white;
+}
+
+div.item-container:hover{
+    background-color: yellow;
+    font-weight: bold;
+}
+
+div.item-container h3:hover{
+    font-weight: bold;
 }
 
 /*product detail page*/
@@ -82,31 +108,14 @@ img.product-detail-img{
 }
 
 div.product-selection{
-    margin-left: 38%;
-    margin-right: 38%;
+    margin-left: 39%;
+    margin-right: 39%;
     text-align: left;
-    border-style: solid;
-    border-color: pink;
-    border-width: 3px;
 }
 
 form{
     font-weight:200;
     font-size: 22px;
-}
-
-#glazing{
-    width:98%;
-    height:35px;
-    margin-top:10px;
-    margin-bottom: 20px;
-}
-
-#pack-size{
-    width:98%;
-    height:35px;
-    margin-top:10px;
-    margin-bottom: 20px;
 }
 
 label{
@@ -115,15 +124,26 @@ label{
     line-height: 35px;
 }
 
+#glazing, #pack-size{
+    width:98%;
+    height:35px;
+    margin-top:10px;
+    margin-bottom: 20px;
+}
+
 #price{
     font-weight:600;
-    margin: 20px;
+    margin: 10px;
 }
 
 button{
     font-weight:600;
-    font-size: 22px;
-    margin: 20px;
+    font-size:22px;
+    padding:5px;
+    padding-left:15px;
+    padding-right:15px;
+    margin: 10px;
+    background-color: yellow;
 }
 
 /*cart page*/

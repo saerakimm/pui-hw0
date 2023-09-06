@@ -13,16 +13,16 @@
       </a>
       <hr class="solid">
     </header>
-    <nav id="nav-menu">
+    <nav>
       <ul>
         <li>
           <a href="./products.html">
-            <h2>PRODUCTS</h2>
+            <h2 class="menu-title">PRODUCTS</h2>
           </a>
         </li>
         <li>
           <a href="./cart-page.html">
-            <h2>CART</h2>
+            <h2 class="menu-title">CART</h2>
           </a>
         </li>
       </ul>
@@ -37,28 +37,24 @@
 
       <div class="product-selection">
         <h4>Customize our delicious, hand-made cinnamon roll to your liking!</h4>
-
-        <form class="selection-menu>
-          <label for="glazing" id="glazing">Glazing:</label>
-          <br>
-          <select name="glazing" id="glazing">
-            <option value="original">Keep original</option>
-            <option value="sugar-milk">Sugar milk</option>
-            <option value="vanilla-milk">Vanilla milk</option>
-            <option value="double-chocolate">Double chocolate</option>
-          </select>
-        </form>
+ 
+        <label>Glazing:</label>
         <br>
-        <form>
-          <label for="pack-size" id="pack-size">Pack size:</label>
+        <select id="glazing">
+          <option value="original">Keep original</option>
+          <option value="sugar-milk">Sugar milk</option>
+          <option value="vanilla-milk">Vanilla milk</option>
+          <option value="double-chocolate">Double chocolate</option>
+        </select>
+        <br>
+          <label>Pack size:</label>
           <br>
-          <select name="pack-size" id="pack-size">
+          <select id="pack-size">
             <option value="1">1</option>
             <option value="3">3</option>
             <option value="6">6</option>
             <option value="12">12</option>
           </select>
-        </form>
         <br><br>
 
         <label id="price">$2.49</label>
