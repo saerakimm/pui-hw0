@@ -21,7 +21,6 @@ h3{
     line-height: 6px;
 }
 
-
 h4{
     font-weight:100;
     font-size: 20px;
@@ -59,15 +58,15 @@ li{
     list-style: none;
 }
 
-.menu-title{
-    width:120px;
-    text-align: center;
-}
-
 a{
     color: black;
     text-decoration: none;
 }
+
+.menu-title:hover{
+    background-color: yellow;
+}
+
 
 
 /*product gallery page*/
