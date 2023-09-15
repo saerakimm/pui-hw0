@@ -1,0 +1,187 @@
+body{
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+main{
+    margin: auto;
+}
+
+h1{
+    font-weight:100;
+    font-size:30px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+h3{
+    font-weight:100;
+    font-size: 25px;
+    line-height: 6px;
+}
+
+h4{
+    font-weight:100;
+    font-size: 20px;
+}
+
+div{
+    text-align: center;
+}
+
+
+/*---------header-----------*/
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-box{
+    flex-basis: 25%;
+    
+}
+
+.line-box{
+    flex-basis: 75%;
+}
+
+.nav-box{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-link{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+img#logo{
+    width: 400px;
+    text-align: left;
+}
+
+hr.solid{
+   border: 3px solid;
+}
+
+/*navigation menu items*/
+
+
+ul{
+    list-style:none;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.menu-title:hover{
+    background-color: yellow;
+}
+
+
+
+/*---------product gallery page---------*/
+
+img.product-img{
+    width: 400px;
+    height: 400px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+div.item-container{
+    text-align: left;
+    margin-left: 32.5%;
+    margin-right: 32.75%;
+    border-style:solid;
+    border-color: red;
+}
+
+div.item-container:hover{
+    background-color: yellow;
+    font-weight: bold;
+}
+
+div.item-container h3:hover{
+    font-weight: bold;
+}
+
+/*---------product detail page---------*/
+
+img.product-detail-img{
+    width: 600px;
+    height: 600px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+div.product-selection{
+    margin-left: 39%;
+    margin-right: 39%;
+    text-align: left;
+}
+
+form{
+    font-weight:200;
+    font-size: 22px;
+}
+
+label{
+    font-weight:200;
+    font-size: 22px;
+    line-height: 35px;
+}
+
+#glazing, #pack-size{
+    width:98%;
+    height:35px;
+    margin-top:10px;
+    margin-bottom: 20px;
+}
+
+#price{
+    font-weight:600;
+    margin: 10px;
+}
+
+button{
+    font-weight:600;
+    font-size:22px;
+    padding:5px;
+    padding-left:15px;
+    padding-right:15px;
+    margin: 10px;
+    background-color: yellow;
+}
+
+/*---------cart page---------*/
+
+img.cart-product-img{
+    width: 200px;
+    height:200px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+#total-checkout{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+
+

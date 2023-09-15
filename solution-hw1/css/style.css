@@ -81,10 +81,10 @@ img.product-img{
 
 div.item-container{
     text-align: left;
-    margin-left: 32.75%;
+    margin-left: 32.5%;
     margin-right: 32.75%;
     border-style:solid;
-    border-color: white;
+    border-color: red;
 }
 
 div.item-container:hover{
