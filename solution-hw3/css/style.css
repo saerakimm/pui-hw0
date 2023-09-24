@@ -10,11 +10,10 @@ h1{
     font-size:35px;
 }
 
-/* for header page titles only*/
 
 h2{
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 300;
 }
 
 h3{
@@ -88,7 +87,9 @@ a.menu-link{
     text-decoration: none;
 }
 
+
 .menu-title:hover{
+    font-weight: 800;
     background-color: yellow;
 }
 
@@ -178,6 +179,11 @@ label{
     margin: 10px;
 }
 
+.price-button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
 button{
     font-weight:600;
     font-size:22px;
@@ -187,6 +193,11 @@ button{
     margin: 10px;
     background-color: yellow;
     border-width: 3px;
+}
+
+/* got rid of margin for this particular button for correct right alignment */
+.add-to-cart{
+    margin: 0px;
 }
 
 /*---------cart page---------*/
@@ -199,7 +210,7 @@ button{
 }
 
 
-/* serves as flex sub boxes for colum layout in cart-container
+/* serves as flex sub boxes for column layout in cart-container
 .cart-item-box{
     border-style: solid;
     border-color: red;
@@ -233,7 +244,7 @@ img.cart-product-img{
 
 .cart-item-descrip-box{
     margin-left: 30px;
-    flex: 6;
+    flex: 5;
 }
 
 .cart-item-price-box{
@@ -245,14 +256,16 @@ img.cart-product-img{
     width: 560px;
 }
 
+/* divider under the line on cart page */
+
 .total-price-left-box{
-    flex-basis: 90%;
+    flex: 4;
 }
 
 .total-price-right-box{
-    flex-basis: 10%;
+    flex: .8;
 }
 
-a.remove{
+a.remove-text{
     color: black;
 }
