@@ -38,7 +38,6 @@ class Roll {
 // add instane of Roll object to the cart array 
 function onAddToCart() {
   const rollToAdd = new Roll(rollType, rollGlaze, packPrice, basePrice)
-  // console.log(rollToAdd);
   cart.push(rollToAdd);
   console.log(cart);
 }
@@ -50,7 +49,7 @@ addToCart.addEventListener("click", onAddToCart);
 
 /* -----------------------updating price-------------------------- */
 // create glaze objects
-// TO-DO: create glaze object constructor
+// TO-DO: create Glaze class and constructor
 const keepOriginal = {glazeType:"Keep Original", price:0};
 const vanillaMilk = {glazeType:"Vanilla Milk", price:0};
 const strawberryMilk = {glazeType:"Strawberry Milk", price:0.50};
@@ -70,9 +69,8 @@ for (let i = 0; i < allGlazes.length; i++){
     menu.add(option);
 }
 
-
 // create pack objects
-// TO-DO: create pack object constructor
+// TO-DO: create Pack class and constructor
 const one = {size:"1", price:1};
 const three = {size:"3", price:3};
 const six = {size:"6", price:6};
@@ -103,8 +101,10 @@ var rollGlaze = "Keep original";
 // updates the glazePrice variable value
 function onGlazeChange(eventObj) {
     glazePrice = Number(this.value);
-    rollGlaze = (eventObj.target.options[eventObj.target.selectedIndex].text);
-    // console.log(rollGlaze);
+    // obtain the whole glaze menu
+    tempMenuObj = eventObj.target.options;
+    // index the menu to obtain just the glaze name text
+    rollGlaze = tempMenuObj[eventObj.target.selectedIndex].text;
     updateFinalPrice();
   }
 
