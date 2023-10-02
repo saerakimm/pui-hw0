@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Product Gallery</title>
     <link rel="stylesheet" href="./css/style.css" /> 
+    <script defer src="./js/app.js"></script>
+    <script src="./js/rollsData.js"></script>
   </head>
   <body>
     <header>
@@ -17,7 +19,7 @@
           <div class="nav-box">
               <div class="nav-link">
                 <a class="menu-link" href="./index.html">
-                  <h2 class="menu-title">PRODUCTS</h2>
+                  <h2 class="menu-title" id="current-page">PRODUCTS</h2>
                 </a>
               </div>
               <div class="nav-link">
@@ -36,7 +38,7 @@
   
     <main>
       <div class="product-gallery-container">
-        <a class="product-link" href="./product-page.html">
+        <a class="product-link" href="./product-page.html?roll=Original">
           <div class="product-box">
             <img class="product-img" src="../assets/products/original-cinnamon-roll.jpg" alt="original cinnamon roll" />
             <h3 class="product-title">Original cinnamon roll</h3>
@@ -44,7 +46,7 @@
         </div>
         </a>
 
-        <a class="product-link" href="./product-page.html">
+        <a class="product-link" href="./product-page.html?roll=Apple">
           <div class="product-box">
             <img class="product-img" src="../assets/products/apple-cinnamon-roll.jpg" alt="apple cinnamon roll"/>
             <h3 class="product-title">Apple cinnamon roll</h3>
@@ -52,7 +54,8 @@
           </div>
         </a>
 
-        <a class="product-link" href="./product-page.html">
+        
+        <a class="product-link" href="./product-page.html?roll=Raisin">
           <div class="product-box">
             <img class="product-img" src="../assets/products/raisin-cinnamon-roll.jpg" alt="raisin cinnamon roll" />
             <h3 class="product-title">Raisin cinnamon roll</h3>
@@ -60,7 +63,8 @@
           </div>
         </a>
 
-        <a class="product-link" href="./product-page.html">
+        
+        <a class="product-link" href="./product-page.html?roll=Walnut">
           <div class="product-box">
             <img class="product-img" src="../assets/products/walnut-cinnamon-roll.jpg" alt="walnut cinnamon roll"/>
             <h3 class="product-title">Walnut cinnamon roll</h3>
@@ -68,7 +72,8 @@
           </div>
         </a>
 
-        <a class="product-link" href="./product-page.html">
+
+        <a class="product-link" href="./product-page.html?roll=Double-Chocolate">
           <div class="product-box">
             <img class="product-img" src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="double chocolate cinnamon roll" />
             <h3 class="product-title">Double-chocolate cinnamon roll</h3>
@@ -76,7 +81,8 @@
           </div>
         </a>
 
-      <a class="product-link" href="./product-page.html">
+        
+      <a class="product-link" href="./product-page.html?roll=Strawberry">
         <div class="product-box">
           <img class="product-img" src="../assets/products/strawberry-cinnamon-roll.jpg" alt="strawberry cinnamon roll"/>
           <h3 class="product-title">Strawberry cinnamon roll</h3>
