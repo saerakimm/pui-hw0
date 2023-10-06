@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cart Page</title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="./js/app.js"></script>
+        <script src="./js/rollsData.js"></script>
+    </head>
+
+    <body>
+      <header>
+        <div class="header-container">
+          <div class="logo-box">
+            <a href="./index.html">
+              <img id="logo" src="../assets/logo/logo-01.svg" alt="Bun Bun Bake Shop Logo" />
+            </a>
+          </div>
+          <div class="right-box">
+            <div class="nav-box">
+                <div class="nav-link">
+                  <a class="menu-link" href="./index.html">
+                    <h2 class="menu-title">PRODUCTS</h2>
+                  </a>
+                </div>
+                <div class="nav-link">
+                  <a class="menu-link" href="./cart-page.html">
+                    <h2 class="menu-title" id="current-page">CART</h2>
+                  </a>
+                </div>
+            </div>
+            <hr class="solid">
+            <div class="page-header-text">
+              <h1>Shopping Cart</h1>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+          <div class="cart-container">
+            <template id="cart-item-template">
+              <div class="cart-item">
+                <div class="cart-item-container">
+                  <div class="cart-item-img-box">
+                    <img class="cart-product-img" src="../assets/products/original-cinnamon-roll.jpg" alt="original-cinnamon-roll">
+                  </div>
+                  <div class="cart-item-descrip-box">
+                    <h5>Original Cinnamon Roll</h5>
+                    <h5>Glazing: Keep original</h5>
+                    <h5>Pack Size: 1</h5>
+                  </div>
+                  <div class="cart-item-price-box">
+                    <h4>$2.49</h4>
+                  </div>
+                </div>
+                <a class="remove-text" href="">Remove</a>
+              </div>
+            </template>
+
+            <br><br>
+            
+            <div class="cart-line-divider">
+              <hr class="solid">
+            </div>
+
+            <div class="cart-total-box">
+              <div class="cart-total-price-container">
+                <div class="total-label-left-box">
+                  <h4>Total:</h4>
+                </div>
+                <div class="total-price-right-box">
+                  <h4>$29.94</h4>
+                </div>
+              </div>
+            </div>
+            <button>Checkout</button>
+          </div>
+
+      </main>
+    </body>
+</html>

@@ -1,4 +1,44 @@
-/* --------------------parsing URL parameter----------------------- */
+/* -------------------add & delete items in cart------------------- */
+const shoppingCart = [];
+
+class Roll {
+  constructor(rollType, rollGlazing, packSize, basePrice) {
+      this.type = rollType;
+      this.glazing =  rollGlazing;
+      this.size = packSize;
+      this.basePrice = basePrice;
+      this.element = null; // for addToShoppingCart function
+  }
+}
+
+// creating four new rolls
+let roll1 = new Roll("Original", "Sugar Milk", 1, 2.49); // total $2.49
+let roll2 = new Roll("Walnut", "Vanilla Milk", 12, 2.49); // total $39.90
+let roll3 = new Roll("Raisin", "Sugar Milk", 3, 2.49); // total $8.49
+let roll4 = new Roll("Apple", "Original", 3, 2.49); // total $10.47
+
+
+function addToShoppingCart(roll){
+  // structure from puinote-lab05
+  // create clone of template
+  const template = document.querySelector("cart-item-template");
+  const clone = template.content.cloneNode(true);
+  
+  // connect this clone to our roll.element
+  // from this point we only need to refer to roll.element
+  roll.element = clone.querySelector('.roll');
+
+  // const btnDelete = notecard.element.querySelector('.icon-delete');
+  // console.log(btnDelete);
+  // btnDelete.addEventListener('click', () => {
+  //   deleteNote(notecard);
+  // });
+
+}
+
+
+/* ----------parsing URL parameter (for product page)------------ */
+const cart = [];
 
 // set basePrice and packPrice and glazePrice
 var basePrice = 2.49;
@@ -6,14 +46,12 @@ var packPrice = 1;
 var glazePrice = 0; 
 var rollGlaze = "Keep original";
 
-const cart = [];
-
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get("roll");
 
 let selectedRoll = rolls[rollType]
-let rollPrice = selectedRoll["basePrice"];
+basePrice = selectedRoll["basePrice"]; // update global var of basePrice
 let rollImgStr = selectedRoll["imageFile"];
 
 // update the header text
@@ -22,9 +60,8 @@ headerElement.innerText = rollType + " cinnamon roll";
 
 // update the base roll price
 const priceElement = document.querySelector("#base-price");
-priceElement.innerText = "$" + rollPrice;
+priceElement.innerText = "$" + basePrice;
 // update global var of basePrice
-basePrice = rollPrice;
 
 // update the image
 const rollImage = document.querySelector("#product-detail-img");
@@ -34,17 +71,8 @@ rollImage.width = 400;
 
 /* ---------------preparing to update cart (hw4)------------------- */
 
-class Roll {
-  constructor(rollType, rollGlazing, packSize, basePrice) {
-      this.type = rollType;
-      this.glazing =  rollGlazing;
-      this.size = packSize;
-      this.basePrice = basePrice;
-  }
-}
-
 // a function that will run when the "add to cart" button is pressed
-// add instane of Roll object to the cart array 
+// add instance of Roll object to the cart array 
 function onAddToCart() {
   const rollToAdd = new Roll(rollType, rollGlaze, packPrice, basePrice)
   cart.push(rollToAdd);
