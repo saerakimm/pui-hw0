@@ -1,4 +1,5 @@
 /* -------------------add & delete items in cart------------------- */
+
 const shoppingCart = [];
 
 class Roll {
@@ -12,30 +13,65 @@ class Roll {
 }
 
 // creating four new rolls
-let roll1 = new Roll("Original", "Sugar Milk", 1, 2.49); // total $2.49
-let roll2 = new Roll("Walnut", "Vanilla Milk", 12, 2.49); // total $39.90
-let roll3 = new Roll("Raisin", "Sugar Milk", 3, 2.49); // total $8.49
-let roll4 = new Roll("Apple", "Original", 3, 2.49); // total $10.47
+let roll1 = new Roll("original", "Sugar Milk", 1, 2.49); // total $2.49
+let roll2 = new Roll("walnut", "Vanilla Milk", 12, 2.49); // total $39.90
+let roll3 = new Roll("raisin", "Sugar Milk", 3, 2.49); // total $8.49
+let roll4 = new Roll("apple", "Original", 3, 2.49); // total $10.47
+
+// add rolls to shoppingCart
+shoppingCart.push(roll1);
+shoppingCart.push(roll2);
+shoppingCart.push(roll3);
+shoppingCart.push(roll4);
 
 
-function addToShoppingCart(roll){
-  // structure from puinote-lab05
+
+function createCartItem(roll){
   // create clone of template
-  const template = document.querySelector("cart-item-template");
+  const template = document.querySelector("#cart-item-template");
   const clone = template.content.cloneNode(true);
-  
-  // connect this clone to our roll.element
-  // from this point we only need to refer to roll.element
-  roll.element = clone.querySelector('.roll');
 
-  // const btnDelete = notecard.element.querySelector('.icon-delete');
-  // console.log(btnDelete);
-  // btnDelete.addEventListener('click', () => {
-  //   deleteNote(notecard);
-  // });
+  // conntect clone box to roll.element;
+  roll.element = clone.querySelector(".cart-item"); 
 
+  // the BIG container that holds all the cart items
+  const cartPageContainer = document.querySelector(".cart-container");
+
+  // add the cloned cart item to the container
+  cartPageContainer.prepend(roll.element);
+
+  updateCartItem(roll)
 }
 
+createCartItem(roll1);
+createCartItem(roll2);
+createCartItem(roll3);
+
+function updateCartItem(roll){
+  // updating template clone's img
+  let itemImg = template.content.querySelector(".cart-product-img"); // get object
+  // create new img src string based on roll variable passed into this function
+  let newImgSrcString = "../assets/products/" + roll.type + "-cinnamon-roll.jpg";
+  // update src attribute
+  itemImg.setAttribute("src", newImgSrcString);
+  
+  // updating template clone's alt text
+  // create new img alt text based on roll variable passed into this function
+  let newImgAltString = roll.type + "-cinnamon-roll";
+  // update alt attribute
+  itemImg.setAttribute("alt", newImgAltString);
+
+  // updating item name
+  let name = template.content.querySelector("#item-name");
+  let itemNameStr = roll.type + " cinnamon roll";
+  name.innerHTML = itemNameStr;
+
+  // updating item glaze
+  let glaze = template.content.querySelector("#item-glaze");
+  glaze.innerHTML = roll.glazing;
+  console.log("glaze text: " + glaze.innerHTML);
+
+}
 
 /* ----------parsing URL parameter (for product page)------------ */
 const cart = [];
@@ -49,7 +85,6 @@ var rollGlaze = "Keep original";
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get("roll");
-
 let selectedRoll = rolls[rollType]
 basePrice = selectedRoll["basePrice"]; // update global var of basePrice
 let rollImgStr = selectedRoll["imageFile"];
