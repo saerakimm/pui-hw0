@@ -1,87 +1,4 @@
-/* -------------------add items in cart (hw5)------------------- */
-
-const shoppingCart = [];
-
-class Roll {
-  constructor(rollType, rollGlazing, packSize, basePrice) {
-      this.type = rollType;
-      this.glazing =  rollGlazing;
-      this.size = packSize;
-      this.basePrice = basePrice;
-      this.element = null; // for addToShoppingCart function
-  }
-}
-
-// creating four new rolls
-let roll1 = new Roll("original", "Sugar Milk", 1, 2.49); // total $2.49
-let roll2 = new Roll("walnut", "Vanilla Milk", 12, 2.49); // total $39.90
-let roll3 = new Roll("raisin", "Sugar Milk", 3, 2.49); // total $8.49
-let roll4 = new Roll("apple", "Original", 3, 2.49); // total $10.47
-
-// add rolls to shoppingCart
-shoppingCart.push(roll1);
-shoppingCart.push(roll2);
-shoppingCart.push(roll3);
-shoppingCart.push(roll4);
-
-// takes in a roll object then creates a clone of the item template and appends to DOM
-// calls the updateCartItem() function to update the clone element content according to roll object passed in
-function createCartItem(roll){
-  // create clone of template
-  const template = document.querySelector("#cart-item-template");
-  const clone = template.content.cloneNode(true);
-
-  // conntect clone box to roll.element;
-  roll.element = clone.querySelector(".cart-item"); 
-
-  // the BIG container that holds all the cart items
-  const cartPageContainer = document.querySelector(".cart-container");
-
-  // add the cloned cart item to the container
-  cartPageContainer.prepend(roll.element);
-  // add the cloned cart item to the shoppingCartArray
-  // shoppingCart.append(roll.element);
-
-  updateCartItem(roll)
-}
-
-// loop through shoppingCart array to populate cart page dynamically
-for(let i = 0; i < shoppingCart.length; i++){
-  console.log(i);
-  createCartItem(shoppingCart[i]);
-}
-
-// updates the content of the item template according to roll object passed in
-function updateCartItem(roll){
-  // updating template clone's img
-  let itemImg = document.querySelector(".cart-product-img"); 
-  // create new img src string based on roll variable passed into this function
-  let newImgSrcString = "../assets/products/" + roll.type + "-cinnamon-roll.jpg";
-  // update src attribute
-  itemImg.setAttribute("src", newImgSrcString);
-  
-  // updating template clone's alt text
-  // create new img alt text based on roll variable passed into this function
-  let newImgAltString = roll.type + "-cinnamon-roll";
-  // update alt attribute
-  itemImg.setAttribute("alt", newImgAltString);
-
-  // updating item name
-  let name = document.querySelector("#item-name");
-  let itemNameStr = roll.type + " Cinnamon Roll";
-  let upperCaseFirstChar = itemNameStr.charAt(0).toUpperCase();
-  // combine with upper case first letter
-  let newItemNameStr = upperCaseFirstChar + itemNameStr.substring(1);
-  name.innerHTML = newItemNameStr;
-
-  // updating item glaze
-  let glaze = document.querySelector("#item-glaze");
-  glaze.innerHTML = roll.glazing;
-}
-/* -------------------remove items in cart (hw5)------------------- */
-
-/* ----------parsing URL parameter (for product page)------------ */
-const cart = [];
+/* --------------------parsing URL parameter----------------------- */
 
 // set basePrice and packPrice and glazePrice
 var basePrice = 2.49;
@@ -89,11 +6,14 @@ var packPrice = 1;
 var glazePrice = 0; 
 var rollGlaze = "Keep original";
 
+const cart = [];
+
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get("roll");
+
 let selectedRoll = rolls[rollType]
-basePrice = selectedRoll["basePrice"]; // update global var of basePrice
+let rollPrice = selectedRoll["basePrice"];
 let rollImgStr = selectedRoll["imageFile"];
 
 // update the header text
@@ -102,8 +22,9 @@ headerElement.innerText = rollType + " cinnamon roll";
 
 // update the base roll price
 const priceElement = document.querySelector("#base-price");
-priceElement.innerText = "$" + basePrice;
+priceElement.innerText = "$" + rollPrice;
 // update global var of basePrice
+basePrice = rollPrice;
 
 // update the image
 const rollImage = document.querySelector("#product-detail-img");
@@ -113,8 +34,17 @@ rollImage.width = 400;
 
 /* ---------------preparing to update cart (hw4)------------------- */
 
+class Roll {
+  constructor(rollType, rollGlazing, packSize, basePrice) {
+      this.type = rollType;
+      this.glazing = rollGlazing;
+      this.size = packSize;
+      this.basePrice = basePrice;
+  }
+}
+
 // a function that will run when the "add to cart" button is pressed
-// add instance of Roll object to the cart array 
+// add instane of Roll object to the cart array 
 function onAddToCart() {
   const rollToAdd = new Roll(rollType, rollGlaze, packPrice, basePrice)
   cart.push(rollToAdd);
@@ -131,7 +61,7 @@ addToCart.addEventListener("click", onAddToCart);
 // TO-DO: create Glaze class and constructor
 const keepOriginal = {glazeType:"Keep Original", price:0};
 const vanillaMilk = {glazeType:"Vanilla Milk", price:0};
-const strawberryMilk = {glazeType:"Strawberry Milk", price:0.50};
+const strawberryMilk = {glazeType:"Sugar Milk", price:0.50};
 const doubleChocolate = {glazeType:"Double Chocolate", price:1.50};
 
 // an array with glaze objects for looping to populate options
@@ -149,11 +79,11 @@ for (let i = 0; i < allGlazes.length; i++){
 }
 
 // create pack objects
-// TO-DO: create Pack class and constructor
+// TO-DO: create Pack class
 const one = {size:"1", price:1};
 const three = {size:"3", price:3};
-const six = {size:"6", price:6};
-const twelve = {size:"12", price:12};
+const six = {size:"6", price:5};
+const twelve = {size:"12", price:10};
 
 // an array with pack objects for looping to populate options
 let allPacks = [one, three, six, twelve];
