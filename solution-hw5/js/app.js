@@ -1,4 +1,4 @@
-/* -------------------add & delete items in cart------------------- */
+/* -------------------add items in cart (hw5)------------------- */
 
 const shoppingCart = [];
 
@@ -24,8 +24,8 @@ shoppingCart.push(roll2);
 shoppingCart.push(roll3);
 shoppingCart.push(roll4);
 
-
-
+// takes in a roll object then creates a clone of the item template and appends to DOM
+// calls the updateCartItem() function to update the clone element content according to roll object passed in
 function createCartItem(roll){
   // create clone of template
   const template = document.querySelector("#cart-item-template");
@@ -39,17 +39,22 @@ function createCartItem(roll){
 
   // add the cloned cart item to the container
   cartPageContainer.prepend(roll.element);
+  // add the cloned cart item to the shoppingCartArray
+  // shoppingCart.append(roll.element);
 
   updateCartItem(roll)
 }
 
-createCartItem(roll1);
-createCartItem(roll2);
-createCartItem(roll3);
+// loop through shoppingCart array to populate cart page dynamically
+for(let i = 0; i < shoppingCart.length; i++){
+  console.log(i);
+  createCartItem(shoppingCart[i]);
+}
 
+// updates the content of the item template according to roll object passed in
 function updateCartItem(roll){
   // updating template clone's img
-  let itemImg = template.content.querySelector(".cart-product-img"); // get object
+  let itemImg = document.querySelector(".cart-product-img"); 
   // create new img src string based on roll variable passed into this function
   let newImgSrcString = "../assets/products/" + roll.type + "-cinnamon-roll.jpg";
   // update src attribute
@@ -62,16 +67,18 @@ function updateCartItem(roll){
   itemImg.setAttribute("alt", newImgAltString);
 
   // updating item name
-  let name = template.content.querySelector("#item-name");
-  let itemNameStr = roll.type + " cinnamon roll";
-  name.innerHTML = itemNameStr;
+  let name = document.querySelector("#item-name");
+  let itemNameStr = roll.type + " Cinnamon Roll";
+  let upperCaseFirstChar = itemNameStr.charAt(0).toUpperCase();
+  // combine with upper case first letter
+  let newItemNameStr = upperCaseFirstChar + itemNameStr.substring(1);
+  name.innerHTML = newItemNameStr;
 
   // updating item glaze
-  let glaze = template.content.querySelector("#item-glaze");
+  let glaze = document.querySelector("#item-glaze");
   glaze.innerHTML = roll.glazing;
-  console.log("glaze text: " + glaze.innerHTML);
-
 }
+/* -------------------remove items in cart (hw5)------------------- */
 
 /* ----------parsing URL parameter (for product page)------------ */
 const cart = [];

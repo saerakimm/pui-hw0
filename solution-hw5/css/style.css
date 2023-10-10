@@ -213,7 +213,6 @@ button{
     flex-direction: column;
     align-items: flex-end;
     margin-top: 50px;
-    border: solid teal 2px;
 }
 
 img.cart-product-img{
@@ -226,15 +225,14 @@ img.cart-product-img{
 
 /* -----cart item template items-----*/
 .cart-item{
-    border: solid 6px blue;
     width: 750px;
+    padding: 12px;
 }
 
 .cart-item-container{
     display: flex;
     flex-flow:row;
     width: 750px;
-    border: solid red;
 }
 
 .cart-item-img-box{
@@ -243,7 +241,6 @@ img.cart-product-img{
 
 .cart-item-descrip-box{
     border-width: 10px;
-    border-color: red;
     margin-left: 30px;
     flex: 5;
 }
@@ -254,12 +251,10 @@ img.cart-product-img{
 /*-------------------------------*/
 
 .cart-line-divider{
-    border: solid 6px green;
-    width: 750px;
+    width: 765px;
 }
 
 .cart-total-price-container{
-    border: solid 6px pink;
     display: flex;
     width: 570px;
     
@@ -267,7 +262,6 @@ img.cart-product-img{
 
 .total-label-left-box{
     flex: 4;
-    border: solid 6px purple;
 }
 
 .total-price-right-box{
