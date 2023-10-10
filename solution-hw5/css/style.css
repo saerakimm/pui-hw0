@@ -246,7 +246,7 @@ img.cart-product-img{
 }
 
 .cart-item-price-box{
-    flex: 1;
+    margin-right: 25px;
 }
 /*-------------------------------*/
 
@@ -257,7 +257,6 @@ img.cart-product-img{
 .cart-total-price-container{
     display: flex;
     width: 570px;
-    
 }
 
 .total-label-left-box{
@@ -265,7 +264,7 @@ img.cart-product-img{
 }
 
 .total-price-right-box{
-    flex: .8;
+    margin-right: 30px;
 }
 
 #remove-text{

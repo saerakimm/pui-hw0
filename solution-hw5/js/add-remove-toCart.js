@@ -125,7 +125,6 @@ function calculatePrice(roll){
     return calculatedPrice
 }
 
-
 /* -------------------remove items in cart (hw5)------------------- */
 
 function deleteItem(roll){
